@@ -1,0 +1,21 @@
+.sidebar {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    text-align: center;
+    border-bottom: 2px solid #8e949d;
+
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+img {
+    height: 70px
+}
