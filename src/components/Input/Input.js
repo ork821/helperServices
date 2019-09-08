@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {AddTodo} from "../../redux/actions/todo.actions";
+import {InputGroup} from "react-bootstrap";
 
 const Input = ({addTodo}) => {
     let input

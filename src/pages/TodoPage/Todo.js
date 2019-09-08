@@ -1,18 +1,17 @@
 import React from 'react';
 import Input from "../../components/Input/Input";
 import {connect} from "react-redux";
+import TodoList from "../../components/todolist/TodoList";
 
-const Todo = ({todos}) => {
+const Todo = () => {
     return (
         <div>
             <Input textBefore="Enter your task" btnText="Add Task"/>
-
+            <TodoList/>
         </div>
     );
 };
 
-const mapStateToProps = state => ({
-    todos: state.todos
-})
 
-export default connect(mapStateToProps)(Todo);
+
+export default Todo;
