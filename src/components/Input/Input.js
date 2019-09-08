@@ -1,55 +1,45 @@
-import React, {Component} from 'react';
-import {Button, InputGroup} from "react-bootstrap";
+import React from 'react';
 import {connect} from "react-redux";
 import {AddTodo} from "../../redux/actions/todo.actions";
 
-class Input extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            input: ''
-        }
+const Input = ({addTodo}) => {
+    let input
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        addTodo(input.value)
     }
 
-    handleChange = (e) => {
-        this.setState({
-            input: e.target.value
-        })
-    }
+    return (
+        <form onSubmit={handleSubmit}>
+            <input ref={node => input = node} />
+            <button type='submit'>add task</button>
+        </form>
 
-    handleClick = () => {
-        AddTodo(this.state.input)
-        this.setState({
-            input: ''
-        })
-    }
+    );
 
-    render() {
-        const {textBefore, btnText} = this.props
-        return (
-            <InputGroup className="mb-3">
-                <InputGroup.Prepend>
-                    <InputGroup.Text id="inputGroup-sizing-default">
-                        {textBefore}
-                    </InputGroup.Text>
-                </InputGroup.Prepend>
-                <input type='text' onChange={this.handleChange} value={this.state.input}/>
-                <InputGroup.Append>
-                    <Button variant="success"
-                            onClick={this.handleClick}>
-                        {btnText}
-                    </Button>
-                </InputGroup.Append>
-            </InputGroup>
-        );
-    }
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => ({
+    addTodo: (text) => dispatch(AddTodo(text))
+})
 
+
+export default connect(null, mapDispatchToProps)(Input);
+
+{/*
+<InputGroup className="mb-3">
+    <InputGroup.Prepend>
+        <InputGroup.Text id="inputGroup-sizing-default">
+            {textBefore}
+        </InputGroup.Text>
+    </InputGroup.Prepend>
+    <input type='text' onChange={this.handleChange} value={this.state.input}/>
+    <InputGroup.Append>
+        <Button variant="success"
+                onClick={this.handleClick}>
+            {btnText}
+        </Button>
+    </InputGroup.Append>
+</InputGroup>*/
 }
-
-
-
-
-export default connect()(Input);
