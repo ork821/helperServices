@@ -1,8 +1,8 @@
 import React from 'react';
-import Todo from "../TodoPage/Todo";
+import Todo from "../../pages/TodoPage/Todo";
 import {Switch, Route} from "react-router-dom";
-import Password from "../PasswordPage/Passwords";
-import StartPage from "../StartPage/Start";
+import Password from "../../pages/PasswordPage/Passwords";
+import StartPage from "../../pages/StartPage/Start";
 import './main.styles.css'
 
 

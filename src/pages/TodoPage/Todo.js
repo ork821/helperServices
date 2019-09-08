@@ -1,13 +1,10 @@
 import React from 'react';
+import Input from "../../components/Input/Input";
 
 const Todo = () => {
     return (
         <div>
-            <h1>Hello</h1>
-            efwfwef
-            wef
-            wef
-            wef
+            <Input textBefore="Enter your task" btnText="Add Task"/>
         </div>
     );
 };
