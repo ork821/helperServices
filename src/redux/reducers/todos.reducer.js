@@ -1,5 +1,4 @@
 import {ADD_TODO, CHANGE_COMPLETE} from "../types/todo.types";
-import {completeTodo} from "../../todo.utils";
 
 export const todos = (state = [], action) => {
     switch (action.type) {
@@ -12,20 +11,11 @@ export const todos = (state = [], action) => {
                     completed: false
                 }
             ]
-
-        case CHANGE_COMPLETE: //берет айди инпута, находит в стейте и меняет состояние
-            state.map(elem => {
-                if (elem.id == action.id) {
-                    elem.completed = !elem.completed
-                    return elem
-                } else {
-                    return elem
-                }
-            })
-
-
+        case CHANGE_COMPLETE:
+            return state.map(todo =>
+                todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+            )
         default:
             return state
     }
-
 }

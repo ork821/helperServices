@@ -2,17 +2,15 @@ import React from 'react';
 import {connect} from "react-redux";
 import Todo from "../todo/Todo";
 import {ListGroup} from "react-bootstrap";
+import {ChangeComplete} from "../../redux/actions/todo.actions";
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos, changeComplete}) => {
     return (
         <ListGroup>
             {todos.map((elem) => {
-                return <Todo key={elem.id}
-                             id={elem.id}
-                             text={elem.text}
-                             completed={elem.completed}
+                return <Todo key={elem.id} {...elem}
+                             onClick={() => changeComplete(elem.id)}
                 />
-
             })}
         </ListGroup>
     );
@@ -21,5 +19,8 @@ const TodoList = ({todos}) => {
 const mapStateToProps = state => ({
     todos: state.todos
 })
+const mapDispatchToProps = (dispatch) => ({
+    changeComplete: (id) => dispatch(ChangeComplete(id))
+})
 
-export default connect(mapStateToProps)(TodoList);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
