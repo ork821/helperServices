@@ -7,7 +7,12 @@ const TodoList = ({todos}) => {
     return (
         <ListGroup>
             {todos.map((elem) => {
-                return <Todo key={elem.id} text={elem.text} completed={elem.completed}/>
+                return <Todo key={elem.id}
+                             id={elem.id}
+                             text={elem.text}
+                             completed={elem.completed}
+                />
+
             })}
         </ListGroup>
     );
