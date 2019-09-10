@@ -1,15 +1,23 @@
 import React from 'react';
-import {Button, ListGroup} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import './todo.styles.css'
 
-const Todo = ({id, completed, text, onClick}) => {
+
+const Todo = ({id, completed, text, changeComplete, delTodo}) => {
+
+    const handleClick = (e) => {
+        e.stopPropagation()
+        delTodo()
+    }
+
     return (
         <div className="todo-element" id={id}
-             style={{textDecoration: completed ? 'line-through' : 'none'}}
-             onClick={onClick}>
-
-                <div className="todo-text">{text}</div>
-                <Button variant="danger">✘</Button>
+             onClick={changeComplete}>
+            <div className="todo-text"
+                 style={{textDecoration: completed ? 'line-through' : 'none'}}>
+                {text}
+            </div>
+            <Button variant="danger" onClick={handleClick}>✘</Button>
 
         </div>
 

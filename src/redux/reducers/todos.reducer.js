@@ -1,7 +1,8 @@
-import {ADD_TODO, CHANGE_COMPLETE} from "../types/todo.types";
+import {ADD_TODO, CHANGE_COMPLETE, DELETE_TODO} from "../types/todo.types";
 
 export const todos = (state = [], action) => {
     switch (action.type) {
+
         case ADD_TODO:
             return [
                 ...state,
@@ -11,10 +12,17 @@ export const todos = (state = [], action) => {
                     completed: false
                 }
             ]
+
         case CHANGE_COMPLETE:
             return state.map(todo =>
                 todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
             )
+
+        case DELETE_TODO:
+            return state.map(todo =>
+            todo.id === action.id ? null : todo
+        )
+
         default:
             return state
     }
