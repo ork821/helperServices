@@ -15,7 +15,7 @@ export const todos = (state = [], action) => {
 
         case CHANGE_COMPLETE:
             return state.map(todo =>
-                todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+                todo.id === action.id ? {...todo, completed: !todo.completed} : todo
             )
 
         case DELETE_TODO:

@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {AddTodo} from "../../redux/actions/todo.actions";
 
-const Input = ({addTodo}) => {
+const InputTodo = ({addTodo}) => {
     let input
 
     const handleSubmit = (e) => {
@@ -26,5 +26,5 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-export default connect(null, mapDispatchToProps)(Input);
+export default connect(null, mapDispatchToProps)(InputTodo);
 

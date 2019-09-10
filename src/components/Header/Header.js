@@ -15,7 +15,7 @@ const Header = () => {
             <Link to='/todo'>
                 <div className="todos navigation">
                     <Image src="/icons/todo.png"  />
-                    <span><b>ToDo</b></span>
+                    <span><b>TODO</b></span>
                 </div>
             </Link>
             <Link to='/passwords'>
