@@ -19,9 +19,9 @@ export const todos = (state = [], action) => {
             )
 
         case DELETE_TODO:
-            return state.map(todo =>
-            todo.id === action.id ? null : todo
-        )
+            return state.filter(todo =>
+                todo.id !== action.id
+            )
 
         default:
             return state

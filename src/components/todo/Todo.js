@@ -3,11 +3,11 @@ import {Button} from "react-bootstrap";
 import './todo.styles.css'
 
 
-const Todo = ({id, completed, text, changeComplete, delTodo}) => {
+const Todo = ({id, completed, text, changeComplete, deleteToDo}) => {
 
     const handleClick = (e) => {
         e.stopPropagation()
-        delTodo()
+        deleteToDo()
     }
 
     return (
