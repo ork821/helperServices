@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col, Button} from "react-bootstrap";
 import './passworditem.styles.css'
 
-const PasswordItem = ({name, login, password, hidden, visiblePass}) => {
+const PasswordItem = ({name, login, password, hidden, visiblePass, deletePass}) => {
     return (
         <div className="password">
             <Row>
@@ -19,7 +19,7 @@ const PasswordItem = ({name, login, password, hidden, visiblePass}) => {
                     <Button variant='success' onClick={visiblePass}>
                         {hidden ? 'Show' : 'Hide'}
                     </Button>
-                    <Button variant='danger'>Delete</Button>
+                    <Button variant='danger' onClick={deletePass}>Delete</Button>
                 </Col>
 
             </Row>

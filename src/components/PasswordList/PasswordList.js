@@ -2,9 +2,9 @@ import React from 'react';
 import PasswordItem from "../PasswordItem/PasswordItem";
 import {connect} from "react-redux";
 import './passwordlist.styles.css'
-import {VisiblePassword} from "../../redux/actions/password.actions";
+import {DeletePassword, VisiblePassword} from "../../redux/actions/password.actions";
 
-const PasswordList = ({passwords, VisiblePassword}) => {
+const PasswordList = ({passwords, VisiblePassword, DeletePassword}) => {
     return (
         <div className="password_field">
             {
@@ -12,7 +12,9 @@ const PasswordList = ({passwords, VisiblePassword}) => {
                     return <PasswordItem
                         key={id}
                         {...password}
-                        visiblePass={() => VisiblePassword(password.name)}/>
+                        visiblePass={() => VisiblePassword(password.name)}
+                        deletePass={() => DeletePassword(password.name)}
+                    />
                 })
             }
         </div>
@@ -24,7 +26,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (disptch) => ({
-    VisiblePassword: name => disptch(VisiblePassword(name))
+    VisiblePassword: name => disptch(VisiblePassword(name)),
+    DeletePassword: name => disptch(DeletePassword(name))
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(PasswordList);

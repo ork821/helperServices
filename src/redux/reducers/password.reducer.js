@@ -1,4 +1,4 @@
-import {ADD_PASSWORD, VISIBLE_PASSWORD} from "../types/password.types";
+import {ADD_PASSWORD, DELETE_PASSWORD, VISIBLE_PASSWORD} from "../types/password.types";
 
 export const passwords = (state = [], action) => {
     switch (action.type) {
@@ -15,6 +15,9 @@ export const passwords = (state = [], action) => {
 
         case VISIBLE_PASSWORD:
             return state.map(pass => pass.name === action.name ? {...pass, hidden: !pass.hidden} : pass)
+
+        case DELETE_PASSWORD:
+            return state.filter(pass => pass.name !== action.name)
 
         default:
             return state
