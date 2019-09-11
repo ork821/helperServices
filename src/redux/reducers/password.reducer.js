@@ -14,9 +14,7 @@ export const passwords = (state = [], action) => {
             ]
 
         case VISIBLE_PASSWORD:
-            return state.map(pass =>
-                pass.name === action.name ? {...pass, hidden: !pass.hidden} : pass
-            )
+            return state.map(pass => pass.name === action.name ? {...pass, hidden: !pass.hidden} : pass)
 
         default:
             return state
