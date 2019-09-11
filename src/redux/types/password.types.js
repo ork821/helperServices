@@ -1,1 +1,2 @@
 export const ADD_PASSWORD = 'ADD_PASSWORD'
+export const VISIBLE_PASSWORD = 'VISIBLE_PASSWORD'
