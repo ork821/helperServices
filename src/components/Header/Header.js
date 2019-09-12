@@ -24,6 +24,12 @@ const Header = () => {
                     <span><b>Passwords</b></span>
                 </div>
             </Link>
+            <Link to='/money'>
+                <div className="passwords navigation">
+                    <Image src="/icons/money.png"  />
+                    <span><b>Money</b></span>
+                </div>
+            </Link>
         </div>
     );
 };
