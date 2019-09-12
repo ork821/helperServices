@@ -3,7 +3,9 @@ import React from 'react';
 const MoneyPage = () => {
     return (
         <div>
-            Hello, monye page
+            <Expenses /> {/*затраты*/}
+            <Profits /> {/*доход*/}
+            <OtherMoneyPayments /> {/*разное*/}
         </div>
     );
 };
