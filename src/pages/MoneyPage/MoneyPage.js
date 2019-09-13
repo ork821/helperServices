@@ -1,11 +1,13 @@
 import React from 'react';
+import Expenses from "../../components/Expenses/Expenses";
+import Profits from "../../components/Profits/Profits";
+import './moneypage.styles.css'
 
 const MoneyPage = () => {
     return (
-        <div>
-            <Expenses /> {/*затраты*/}
-            <Profits /> {/*доход*/}
-            <OtherMoneyPayments /> {/*разное*/}
+        <div className='money'>
+            <Expenses/> {/*затраты*/}
+            <Profits/> {/*доход*/}
         </div>
     );
 };
