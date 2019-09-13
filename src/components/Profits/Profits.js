@@ -10,10 +10,7 @@ const Profits = () => {
     return (
         <div className="profits">
             <h1>Profits</h1>
-            <AddInput idFirstInput={idFirstInput}
-                      idForm={idForm}
-                      idSecondInput={idSecondInput}
-            />
+
 
         </div>
     );

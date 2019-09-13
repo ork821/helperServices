@@ -1,4 +1,4 @@
-import {ADD_EXPENSE} from "../types/expense.types";
+import {ADD_EXPENSE, DELETE_EXPENSE} from "../types/expense.types";
 
 export const expenses = (state = [], action) => {
     switch (action.type) {
@@ -11,6 +11,9 @@ export const expenses = (state = [], action) => {
                     comment: action.comment
                 }
             ]
+        case DELETE_EXPENSE:
+            return state.filter(
+                exp => exp.id !== action.id)
         default:
             return state
     }

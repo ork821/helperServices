@@ -10,3 +10,10 @@ export const AddExpense = (money, comment) => {
     }
 }
 
+export const DeleteExpense = (id) => {
+    return {
+        type: ADD_EXPENSE,
+        id,
+    }
+}
+
